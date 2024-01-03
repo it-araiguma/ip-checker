@@ -9,7 +9,7 @@ const props = defineProps<{
 </script>
 
 <template>
-    <p class="greeting">{{ props.ip }}</p>
+    <p class="greeting aaa">{{ props.ip }}</p>
     <p class="greeting">{{ props.host }}</p>
     <p class="greeting">{{ props.userAgent }}</p>
 </template>
