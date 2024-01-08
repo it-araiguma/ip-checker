@@ -26,10 +26,17 @@ const toggleLeftDrawer = () => {
         </q-header>
 
         <q-page-container>
-            <!-- <router-view /> -->
-            <p class="greeting">{{ props.ip }}</p>
-            <p class="greeting">{{ props.host }}</p>
-            <p class="greeting">{{ props.userAgent }}</p>
+            <div class="q-gutter-md q-tile justify-center items-center">
+                <p class="greeting">{{ props.ip }}</p>
+            </div>
+
+            <div class="q-gutter-md q-tile justify-center items-center">
+                <p class="greeting">{{ props.host }}</p>
+            </div>
+
+            <div class="q-gutter-md q-tile justify-center items-center">
+                <p class="greeting">{{ props.userAgent }}</p>
+            </div>
         </q-page-container>
 
         <q-footer elevated class="bg-grey-8 text-white">
