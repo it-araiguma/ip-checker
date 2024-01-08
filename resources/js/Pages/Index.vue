@@ -9,9 +9,7 @@ const props = defineProps<{
 }>();
 
 const leftDrawerOpen = ref(false);
-const toggleLeftDrawer = () => {
-    leftDrawerOpen.value = !leftDrawerOpen.value
-}
+const dense = ref(true);
 </script>
 
 <template>
@@ -26,16 +24,26 @@ const toggleLeftDrawer = () => {
         </q-header>
 
         <q-page-container>
-            <div class="q-gutter-md q-tile justify-center items-center">
-                <p class="greeting">{{ props.ip }}</p>
-            </div>
+            <div class="q-pa-md">
+                <div class="q-gutter-y-md column" style="max-width: 400px">
+                    <div class="q-gutter-md q-tile justify-center items-center">
+                        <q-input filled :dense="dense" readonly label="IPアドレス">
+                            {{ props.ip }}
+                        </q-input>
+                    </div>
 
-            <div class="q-gutter-md q-tile justify-center items-center">
-                <p class="greeting">{{ props.host }}</p>
-            </div>
+                    <div class="q-gutter-md q-tile justify-center items-center">
+                        <q-input filled :dense="dense" label="ホスト" readonly>
+                            {{ props.host }}
+                        </q-input>
+                    </div>
 
-            <div class="q-gutter-md q-tile justify-center items-center">
-                <p class="greeting">{{ props.userAgent }}</p>
+                    <div class="q-gutter-md q-tile justify-center items-center">
+                        <q-input filled :dense="dense" label="ユーザーエージェント" readonly autogrow>
+                            {{ props.userAgent }}
+                        </q-input>
+                    </div>
+                </div>
             </div>
         </q-page-container>
 
