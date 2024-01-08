@@ -35,7 +35,9 @@ const toggleLeftDrawer = () => {
         <q-footer elevated class="bg-grey-8 text-white">
             <q-toolbar>
                 <q-toolbar-title>
-                    <div class="copyright">Copyright © <a href="https://it-araiguma.com" target="_blank">ITアライグマ</a> All Rights Reserved.</div>
+                    <div class="copyright">
+                        Copyright © <a href="https://it-araiguma.com" target="_blank">ITアライグマ</a> AllRights Reserved.
+                    </div>
                 </q-toolbar-title>
             </q-toolbar>
         </q-footer>
@@ -53,7 +55,7 @@ const toggleLeftDrawer = () => {
     font-size: 14px;
 }
 
-.copyright > a {
+.copyright>a {
     color: #fff;
 }
 </style>
