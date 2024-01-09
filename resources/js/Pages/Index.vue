@@ -11,7 +11,7 @@ const dense = ref(true);
 </script>
 
 <template>
-    <q-layout view="hHh lpR fFf">
+    <q-layout view="lHh Lpr lFf">
 
         <q-header elevated class="bg-primary text-white" height-hint="98">
             <q-toolbar>
@@ -21,9 +21,9 @@ const dense = ref(true);
             </q-toolbar>
         </q-header>
 
-        <q-page-container>
+        <q-page-container class="centered-container">
             <div class="q-pa-md">
-                <div class="q-gutter-y-md column text-center" style="max-width: 440px">
+                <div class="q-gutter-y-md column">
                     <div class="q-gutter-md q-tile justify-center items-center">
                         <q-input label="IPアドレス" stack-label :dense="dense" readonly>
                             {{ props.ip }}
@@ -63,7 +63,7 @@ const dense = ref(true);
     font-size: 14px;
 }
 
-.copyright > a {
+.copyright>a {
     color: #fff;
 }
 </style>
