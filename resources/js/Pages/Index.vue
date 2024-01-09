@@ -23,21 +23,21 @@ const dense = ref(true);
 
         <q-page-container>
             <div class="q-pa-md">
-                <div class="q-gutter-y-md column" style="max-width: 400px">
+                <div class="q-gutter-y-md column text-center" style="max-width: 440px">
                     <div class="q-gutter-md q-tile justify-center items-center">
-                        <q-input filled :dense="dense" readonly label="IPアドレス">
+                        <q-input label="IPアドレス" stack-label :dense="dense" readonly>
                             {{ props.ip }}
                         </q-input>
                     </div>
 
                     <div class="q-gutter-md q-tile justify-center items-center">
-                        <q-input filled :dense="dense" label="ホスト" readonly>
+                        <q-input stack-label :dense="dense" label="ホスト" readonly>
                             {{ props.host }}
                         </q-input>
                     </div>
 
                     <div class="q-gutter-md q-tile justify-center items-center">
-                        <q-input filled :dense="dense" label="ユーザーエージェント" readonly autogrow>
+                        <q-input stack-label :dense="dense" label="ユーザーエージェント" readonly autogrow>
                             {{ props.userAgent }}
                         </q-input>
                     </div>
