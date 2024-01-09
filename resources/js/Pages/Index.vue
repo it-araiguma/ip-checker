@@ -1,5 +1,4 @@
 <script setup lang="ts">
-import { InertiaLink } from "@inertiajs/inertia-vue3";
 import { ref } from "vue";
 
 const props = defineProps<{
@@ -8,7 +7,6 @@ const props = defineProps<{
     userAgent: string,
 }>();
 
-const leftDrawerOpen = ref(false);
 const dense = ref(true);
 </script>
 
@@ -61,16 +59,11 @@ const dense = ref(true);
 </template>
 
 <style>
-.greeting {
-    color: red;
-    font-weight: bold;
-}
-
 .copyright {
     font-size: 14px;
 }
 
-.copyright>a {
+.copyright > a {
     color: #fff;
 }
 </style>
