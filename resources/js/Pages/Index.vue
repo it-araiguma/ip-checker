@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import { ref } from "vue";
+import { router } from "@inertiajs/vue3";
 
 const props = defineProps<{
     ip: string,
@@ -8,6 +9,10 @@ const props = defineProps<{
 }>();
 
 const dense = ref(false);
+
+const reload = () => {
+    router.reload();
+}
 </script>
 
 <template>
@@ -43,7 +48,7 @@ const dense = ref(false);
                     </div>
 
                     <div class="">
-                        <q-btn icon="refresh" color="blue" fab @click="" class="float-right q-mt-xl" />
+                        <q-btn icon="refresh" color="blue" fab @click="reload" class="float-right q-mt-xl" />
                     </div>
                 </div>
             </div>
@@ -52,7 +57,7 @@ const dense = ref(false);
         <q-footer elevated class="bg-grey-8 text-white">
             <q-toolbar>
                 <q-toolbar-title>
-                    <div class="copyright">
+                    <div class="copyright text-center">
                         Copyright © <a href="https://it-araiguma.com" target="_blank">ITアライグマ</a> AllRights Reserved.
                     </div>
                 </q-toolbar-title>
