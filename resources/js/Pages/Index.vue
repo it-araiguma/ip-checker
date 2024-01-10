@@ -41,6 +41,10 @@ const dense = ref(false);
                             {{ props.userAgent }}
                         </q-input>
                     </div>
+
+                    <div class="">
+                        <q-btn icon="refresh" color="blue" fab @click="" class="float-right q-mt-xl" />
+                    </div>
                 </div>
             </div>
         </q-page-container>
@@ -63,7 +67,7 @@ const dense = ref(false);
     font-size: 14px;
 }
 
-.copyright > a {
+.copyright>a {
     color: #fff;
 }
 </style>
