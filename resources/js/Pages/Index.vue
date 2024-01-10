@@ -7,13 +7,13 @@ const props = defineProps<{
     userAgent: string,
 }>();
 
-const dense = ref(true);
+const dense = ref(false);
 </script>
 
 <template>
     <q-layout view="lHh Lpr lFf">
 
-        <q-header elevated class="bg-primary text-white" height-hint="98">
+        <q-header elevated class="bg-primary text-white">
             <q-toolbar>
                 <q-toolbar-title>
                     IPチェッカー
@@ -21,7 +21,7 @@ const dense = ref(true);
             </q-toolbar>
         </q-header>
 
-        <q-page-container class="centered-container">
+        <q-page-container class="flex justify-center items-start">
             <div class="q-pa-md">
                 <div class="q-gutter-y-md column">
                     <div class="q-gutter-md">
