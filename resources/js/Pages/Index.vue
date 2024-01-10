@@ -24,19 +24,19 @@ const dense = ref(true);
         <q-page-container class="centered-container">
             <div class="q-pa-md">
                 <div class="q-gutter-y-md column">
-                    <div class="q-gutter-md q-tile justify-center items-center">
+                    <div class="q-gutter-md">
                         <q-input label="IPアドレス" stack-label :dense="dense" readonly>
                             {{ props.ip }}
                         </q-input>
                     </div>
 
-                    <div class="q-gutter-md q-tile justify-center items-center">
+                    <div class="q-gutter-md">
                         <q-input stack-label :dense="dense" label="ホスト" readonly>
                             {{ props.host }}
                         </q-input>
                     </div>
 
-                    <div class="q-gutter-md q-tile justify-center items-center">
+                    <div class="q-gutter-md">
                         <q-input stack-label :dense="dense" label="ユーザーエージェント" readonly autogrow>
                             {{ props.userAgent }}
                         </q-input>
@@ -63,7 +63,7 @@ const dense = ref(true);
     font-size: 14px;
 }
 
-.copyright>a {
+.copyright > a {
     color: #fff;
 }
 </style>
