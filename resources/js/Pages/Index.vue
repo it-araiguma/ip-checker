@@ -42,12 +42,12 @@ const reload = () => {
                     </div>
 
                     <div class="q-gutter-md">
-                        <q-input stack-label :dense="dense" label="ユーザーエージェント" readonly autogrow>
+                        <q-input stack-label :dense="dense" label="ユーザーエージェント" class="break-all" readonly autogrow>
                             {{ props.userAgent }}
                         </q-input>
                     </div>
 
-                    <div class="">
+                    <div>
                         <q-btn icon="refresh" color="blue" fab @click="reload" class="float-right q-mt-xl" />
                     </div>
                 </div>
@@ -74,5 +74,9 @@ const reload = () => {
 
 .copyright>a {
     color: #fff;
+}
+
+.break-all {
+    word-break: break-all;
 }
 </style>

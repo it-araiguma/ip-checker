@@ -10,7 +10,7 @@ class IndexController extends Controller
     public function index(Request $request)
     {
         $ip = $request->ip();
-        $host = $request->host();
+        $host = gethostname();
         $userAgent = $request->userAgent();
 
         return Inertia::render('Index', ['ip' => $ip, 'host' => $host, 'userAgent' => $userAgent]);
