@@ -16,9 +16,11 @@
             gtag('config', 'G-XFR2JYLS4T');
         </script>
     @endif
-    <title>IPチェッカー | IPアドレス、ホスト、ユーザーエージェントのチェックができます。</title>
+    <title>IPチェッカー | IPアドレス、ホスト、ユーザーエージェントのチェックツール</title>
+    <meta name="description" content="IPチェッカーはIPアドレス、ホスト、ユーザーエージェントのチェックができる便利ツールです。">
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0" />
+    <link rel="icon" href="{{ asset('images/favicon.ico') }}">
     @inertiaHead
     @vite(['resources/css/app.css', 'resources/js/app.js'])
 </head>

@@ -13,6 +13,6 @@ class IndexController extends Controller
         $host = gethostbyaddr($ip);
         $userAgent = $request->userAgent();
 
-        return Inertia::render('Index', ['ip' => $ip, 'host' => $host, 'userAgent' => $userAgent]);
+        return Inertia::render('Index', ['ip' => $ip, 'host' => $host, 'user_agent' => $userAgent]);
     }
 }
