@@ -5,7 +5,7 @@ import { router } from "@inertiajs/vue3";
 const props = defineProps<{
     ip: string,
     host: string,
-    userAgent: string,
+    user_agent: string,
 }>();
 
 const dense = ref(false);
@@ -43,7 +43,7 @@ const reload = () => {
 
                     <div class="q-gutter-md">
                         <q-input stack-label :dense="dense" label="ユーザーエージェント" class="break-all" readonly autogrow>
-                            {{ props.userAgent }}
+                            {{ props.user_agent }}
                         </q-input>
                     </div>
 
