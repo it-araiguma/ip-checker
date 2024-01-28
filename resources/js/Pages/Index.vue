@@ -27,7 +27,7 @@ const reload = () => {
         </q-header>
 
         <q-page-container class="flex justify-center items-start">
-            <div class="q-pa-md" style="width: 400px;">
+            <div class="q-pa-md" style="width: 800px;">
                 <div class="q-gutter-y-md column">
                     <div class="q-gutter-md">
                         <q-input label="IPアドレス" stack-label :dense="dense" readonly v-model="props.ip" />
