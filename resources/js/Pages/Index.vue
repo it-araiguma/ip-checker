@@ -27,28 +27,22 @@ const reload = () => {
         </q-header>
 
         <q-page-container class="flex justify-center items-start">
-            <div class="q-pa-md">
+            <div class="q-pa-md" style="width: 400px;">
                 <div class="q-gutter-y-md column">
                     <div class="q-gutter-md">
-                        <q-input label="IPアドレス" stack-label :dense="dense" readonly>
-                            {{ props.ip }}
-                        </q-input>
+                        <q-input label="IPアドレス" stack-label :dense="dense" readonly v-model="props.ip" />
                     </div>
 
                     <div class="q-gutter-md">
-                        <q-input stack-label :dense="dense" label="ホスト" readonly>
-                            {{ props.host }}
-                        </q-input>
+                        <q-input stack-label :dense="dense" label="ホスト" readonly v-model="props.host" />
                     </div>
 
                     <div class="q-gutter-md">
-                        <q-input stack-label :dense="dense" label="ユーザーエージェント" class="break-all" readonly autogrow>
-                            {{ props.user_agent }}
-                        </q-input>
+                        <q-input stack-label :dense="dense" label="ユーザーエージェント" class="break-all" readonly autogrow v-model="props.user_agent" />
                     </div>
 
                     <div>
-                        <q-btn icon="refresh" color="blue" fab @click="reload" class="float-right q-mt-xl" />
+                        <q-btn icon="refresh" color="blue" fab @click="reload" class="float-right q-mt-lg" />
                     </div>
                 </div>
             </div>
