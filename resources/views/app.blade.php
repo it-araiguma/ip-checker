@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 
-<head>
+<head prefix="og: http://ogp.me/ns#">
     @if (config('app.env') === 'production')
         <!-- Google tag (gtag.js) -->
         <script async src="https://www.googletagmanager.com/gtag/js?id=G-XFR2JYLS4T"></script>
@@ -21,6 +21,8 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0" />
     <link rel="icon" href="{{ asset('images/favicon.ico') }}">
+    <meta property="og:title" content="IPチェッカー | IPアドレス、ホスト、ユーザーエージェントのチェックツール" />
+    <meta property="og:description" content="IPチェッカーはIPアドレス、ホスト、ユーザーエージェントのチェックができる便利ツールです。" />
     <meta property="og:url" content="{{ config('app.url') }}"/>
     <meta property="og:image" content="{{ asset('images/logo.png') }}" />
     <meta property="og:type" content="article" />
