@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 
-<head prefix="og: http://ogp.me/ns#">
+<head prefix="og:http://ogp.me/ns#">
     @if (config('app.env') === 'production')
         <!-- Google tag (gtag.js) -->
         <script async src="https://www.googletagmanager.com/gtag/js?id=G-XFR2JYLS4T"></script>
@@ -25,7 +25,7 @@
     <meta property="og:description" content="IPチェッカーはIPアドレス、ホスト、ユーザーエージェントのチェックができる便利ツールです。" />
     <meta property="og:url" content="{{ config('app.url') }}"/>
     <meta property="og:image" content="{{ asset('images/logo.png') }}" />
-    <meta property="og:type" content="article" />
+    <meta property="og:type" content="website" />
     <meta property="og:site_name" content="IPチェッカー" />
     <meta name="twitter:card" content="summary" />
     <meta name="twitter:site" content="@it_araiguma">
