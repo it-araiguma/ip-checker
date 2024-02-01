@@ -21,6 +21,12 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0" />
     <link rel="icon" href="{{ asset('images/favicon.ico') }}">
+    <meta property="og:url" content="{{ config('app.url') }}"/>
+    <meta property="og:image" content="{{ asset('images/logo.png') }}" />
+    <meta property="og:type" content="article" />
+    <meta property="og:site_name" content="IPチェッカー" />
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:site" content="@it_araiguma">
     @inertiaHead
     @vite(['resources/css/app.css', 'resources/js/app.js'])
 </head>
