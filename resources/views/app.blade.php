@@ -21,6 +21,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0" />
     <link rel="icon" href="{{ asset('images/favicon.ico') }}">
+    <link rel="manifest" href="{{ asset('manifest.json') }}">
     <meta property="og:title" content="IPチェッカー | IPアドレス、ホスト、ユーザーエージェントのチェックツール" />
     <meta property="og:description" content="IPチェッカーはIPアドレス、ホスト、ユーザーエージェントのチェックができる便利ツールです。" />
     <meta property="og:url" content="{{ config('app.url') }}"/>
