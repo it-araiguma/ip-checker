@@ -16,19 +16,9 @@
             "sizes": "32x32"
         },
         {
-            "src": "https://ip.it-araiguma.com/images/150.png",
-            "type": "image/png",
-            "sizes": "150x150"
-        },
-        {
             "src": "https://ip.it-araiguma.com/images/192.png",
             "type": "image/png",
             "sizes": "192x192"
-        },
-        {
-            "src": "https://ip.it-araiguma.com/images/270.png",
-            "type": "image/png",
-            "sizes": "270x270"
         },
         {
             "src": "https://ip.it-araiguma.com/images/512.png",
