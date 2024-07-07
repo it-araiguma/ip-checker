@@ -16,3 +16,5 @@ use Inertia\Inertia;
 */
 
 Route::get('/', [IndexController::class, 'index']);
+
+Route::get('privacy', [IndexController::class, 'privacy'])->name('privacy');

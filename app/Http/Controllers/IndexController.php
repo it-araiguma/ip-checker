@@ -15,4 +15,9 @@ class IndexController extends Controller
 
         return Inertia::render('Index', ['ip' => $ip, 'host' => $host, 'user_agent' => $userAgent]);
     }
+
+    public function privacy()
+    {
+        return Inertia::render('Privacy');
+    }
 }

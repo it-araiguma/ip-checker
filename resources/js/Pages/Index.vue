@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { ref } from "vue";
-import { router } from "@inertiajs/vue3";
+import { Link, router } from "@inertiajs/vue3";
 
 const props = defineProps<{
     ip: string,
@@ -21,7 +21,9 @@ const reload = () => {
         <q-header elevated class="bg-primary text-white">
             <q-toolbar>
                 <q-toolbar-title>
-                    IPチェッカー
+                    <a href="/" style="color: #fff;text-decoration: none;">
+                        IPチェッカー
+                    </a>
                 </q-toolbar-title>
             </q-toolbar>
         </q-header>
@@ -51,6 +53,9 @@ const reload = () => {
         <q-footer elevated class="bg-grey-8 text-white">
             <q-toolbar>
                 <q-toolbar-title>
+                    <div class="copyright text-center">
+                        <Link href="/privacy">プライバシーポリシー</Link>
+                    </div>
                     <div class="copyright text-center">
                         Copyright © <a href="https://it-araiguma.com" target="_blank">ITアライグマ</a> AllRights Reserved.
                     </div>
