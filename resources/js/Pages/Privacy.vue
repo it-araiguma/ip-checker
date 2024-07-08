@@ -91,11 +91,4 @@ import Footer from "../Components/Footer.vue";
 </template>
 
 <style>
-.copyright {
-    font-size: 14px;
-}
-
-.copyright>a {
-    color: #fff;
-}
 </style>
