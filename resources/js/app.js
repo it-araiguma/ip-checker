@@ -1,7 +1,7 @@
 import { createApp, h } from "vue";
 import { createInertiaApp } from "@inertiajs/inertia-vue3";
 import { resolvePageComponent } from "laravel-vite-plugin/inertia-helpers";
-import { Quasar } from 'quasar';
+import { Quasar, Notify } from 'quasar';
 import quasarLang from 'quasar/lang/ja';
 
 // Import icon libraries
@@ -21,7 +21,9 @@ createInertiaApp({
         createApp({ render: () => h(App, props) })
             .use(plugin)
             .use(Quasar, {
-                plugins: {},
+                plugins: {
+                    Notify,
+                },
                 lang: quasarLang
             })
             .mount(el);
