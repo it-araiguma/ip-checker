@@ -1,4 +1,5 @@
 <script setup lang="ts">
+import Footer from "../Components/Footer.vue";
 </script>
 
 <template>
@@ -85,20 +86,7 @@
                 </div>
             </div>
         </q-page-container>
-
-        <q-footer elevated class="bg-grey-8 text-white">
-            <q-toolbar>
-                <q-toolbar-title>
-                    <div class="copyright text-center">
-                        <a href="https://it-araiguma.com" target="_blank">プライバシーポリシー</a>
-                    </div>
-                    <div class="copyright text-center">
-                        Copyright © <a href="https://it-araiguma.com" target="_blank">ITアライグマ</a> AllRights Reserved.
-                    </div>
-                </q-toolbar-title>
-            </q-toolbar>
-        </q-footer>
-
+        <Footer />
     </q-layout>
 </template>
 

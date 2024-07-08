@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import { ref } from "vue";
-import { Link, router } from "@inertiajs/vue3";
+import { router } from "@inertiajs/vue3";
+import Footer from "../Components/Footer.vue";
 
 const props = defineProps<{
     ip: string,
@@ -40,7 +41,8 @@ const reload = () => {
                     </div>
 
                     <div class="q-gutter-md">
-                        <q-input stack-label :dense="dense" label="ユーザーエージェント" class="break-all" readonly autogrow v-model="props.user_agent" />
+                        <q-input stack-label :dense="dense" label="ユーザーエージェント" class="break-all" readonly autogrow
+                            v-model="props.user_agent" />
                     </div>
 
                     <div>
@@ -49,32 +51,11 @@ const reload = () => {
                 </div>
             </div>
         </q-page-container>
-
-        <q-footer elevated class="bg-grey-8 text-white">
-            <q-toolbar>
-                <q-toolbar-title>
-                    <div class="copyright text-center">
-                        <Link href="/privacy">プライバシーポリシー</Link>
-                    </div>
-                    <div class="copyright text-center">
-                        Copyright © <a href="https://it-araiguma.com" target="_blank">ITアライグマ</a> AllRights Reserved.
-                    </div>
-                </q-toolbar-title>
-            </q-toolbar>
-        </q-footer>
-
+        <Footer />
     </q-layout>
 </template>
 
 <style>
-.copyright {
-    font-size: 14px;
-}
-
-.copyright>a {
-    color: #fff;
-}
-
 .break-all {
     word-break: break-all;
 }
