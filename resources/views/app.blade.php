@@ -30,6 +30,7 @@
     <meta property="og:site_name" content="IPチェッカー" />
     <meta name="twitter:card" content="summary" />
     <meta name="twitter:site" content="@it_araiguma">
+    @routes
     @inertiaHead
     @vite(['resources/css/app.css', 'resources/js/app.js'])
 </head>

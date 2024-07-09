@@ -9,11 +9,9 @@ export default defineConfig({
             input: ['resources/css/app.css', 'resources/js/app.js'],
             refresh: true,
         }),
-
         vue({
             template: { transformAssetUrls }
         }),
-
         quasar({
             sassVariables: 'resources/css/quasar-variables.sass'
         })

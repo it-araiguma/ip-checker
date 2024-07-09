@@ -26,6 +26,7 @@ createInertiaApp({
                 },
                 lang: quasarLang
             })
+            .mixin({ methods: { route } })
             .mount(el);
     }
 });
