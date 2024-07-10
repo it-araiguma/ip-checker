@@ -1,20 +1,11 @@
 <script setup lang="ts">
+import Header from "../Components/Header.vue";
 import Footer from "../Components/Footer.vue";
 </script>
 
 <template>
     <q-layout view="lHh Lpr lFf">
-
-        <q-header elevated class="bg-primary text-white">
-            <q-toolbar>
-                <q-toolbar-title>
-                    <a href="/" style="color: #fff;text-decoration: none;">
-                        IPチェッカー
-                    </a>
-                </q-toolbar-title>
-            </q-toolbar>
-        </q-header>
-
+        <Header />
         <q-page-container class="flex justify-center items-start">
             <div class="q-pa-md" style="width: 800px;">
                 <div class="q-gutter-y-md column">
