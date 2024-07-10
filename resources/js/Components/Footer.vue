@@ -6,7 +6,7 @@ import { Link } from "@inertiajs/vue3";
     <q-footer elevated class="bg-grey-8 text-white q-pt-sm q-pb-sm">
         <q-toolbar>
             <q-toolbar-title>
-                <div class="copyright text-center ">
+                <div class="copyright text-center q-mb-xs">
                     <Link :href="route('privacy')">プライバシーポリシー</Link>
                 </div>
                 <div class="copyright text-center">
