@@ -7,7 +7,8 @@ import { Link } from "@inertiajs/inertia-vue3";
         <q-toolbar>
             <q-toolbar-title>
                 <div class="copyright text-center q-mb-xs">
-                    <Link :href="route('privacy')">プライバシーポリシー</Link>
+                    <Link :href="route('index')" class="q-mx-xs">ホーム</Link>
+                    <Link :href="route('privacy')" class="q-mx-xs">プライバシーポリシー</Link>
                 </div>
                 <div class="copyright text-center">
                     Copyright © <a href="https://it-araiguma.com" target="_blank">ITアライグマ</a> AllRights Reserved.
