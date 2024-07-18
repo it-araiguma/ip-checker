@@ -50,4 +50,8 @@ const reload = () => {
 .break-all {
     word-break: break-all;
 }
+
+#app > div > div > div > div > div:nth-child(3) > label > div {
+    max-height: 100%;
+}
 </style>
