@@ -1,5 +1,5 @@
 {
-  "packageId": "com.it_araiguma.ip.twa",
+  "packageId": "com.it_araiguma.ip",
   "host": "ip.it-araiguma.com",
   "name": "IPチェッカー | IPアドレス、ホスト、ユーザーエージェントのチェックツール",
   "launcherName": "IPチェッカー",
@@ -16,11 +16,11 @@
   "iconUrl": "https://ip.it-araiguma.com/images/512.png",
   "splashScreenFadeOutDuration": 300,
   "signingKey": {
-    "path": "/var/www/html/android.keystore",
+    "path": "/home/aulani/develop/ip-checker/android.keystore",
     "alias": "android"
   },
-  "appVersionName": "1",
-  "appVersionCode": 1,
+  "appVersionName": "4",
+  "appVersionCode": 4,
   "shortcuts": [],
   "generatorApp": "bubblewrap-cli",
   "webManifestUrl": "https://ip.it-araiguma.com/manifest.json",
@@ -38,5 +38,5 @@
   "fingerprints": [],
   "additionalTrustedOrigins": [],
   "retainedBundles": [],
-  "appVersion": "1"
+  "appVersion": "4"
 }

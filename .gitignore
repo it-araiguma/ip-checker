@@ -21,3 +21,7 @@ yarn-error.log
 build/
 app/build/
 .gradle/
+app-release-*
+android.keystore
+manifest-checksum.txt
+store_icon.png
