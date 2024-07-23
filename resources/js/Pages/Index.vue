@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { ref } from "vue";
+import { ref, computed } from "vue";
 import { router } from "@inertiajs/vue3";
 import Header from "@/Components/Header.vue";
 import Footer from "@/Components/Footer.vue";
@@ -10,6 +10,7 @@ const props = defineProps<{
     host: string,
     user_agent: string,
     country: string,
+    city: string,
 }>();
 
 const dense = ref(false);
@@ -17,6 +18,10 @@ const dense = ref(false);
 const reload = () => {
     router.reload();
 }
+
+const CountryAndCity = computed(() => {
+    return `${props.country} / ${props.city}`;
+});
 </script>
 
 <template>
@@ -34,7 +39,7 @@ const reload = () => {
                     </div>
 
                     <div class="q-gutter-md">
-                        <q-input stack-label :dense="dense" label="国" readonly v-model="props.country" />
+                        <q-input stack-label :dense="dense" label="国 / 都市" readonly v-model="CountryAndCity" />
                     </div>
 
                     <div class="q-gutter-md">
@@ -59,9 +64,5 @@ const reload = () => {
 <style>
 .break-all {
     word-break: break-all;
-}
-
-#app > div > div > div > div > div:nth-child(3) > label > div {
-    max-height: 100%;
 }
 </style>

@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Inertia\Inertia;
 use GeoIp2\Database\Reader;
+use GeoIp2\Exception\AddressNotFoundException;
 
 class IndexController extends Controller
 {
@@ -27,12 +28,14 @@ class IndexController extends Controller
 
         $country = null;
         if ($ipv4) {
-            $reader = new Reader(storage_path('app/geoip/GeoLite2-Country.mmdb'));
+            $reader = new Reader(storage_path('app/geoip/GeoLite2-City.mmdb'));
             try {
-                $record = $reader->country($ipv4);
+                $record = $reader->city($ipv4);
                 $country = $record->country->name;
-            } catch (\Exception $e) {
+                $city = $record->city->name;
+            } catch (AddressNotFoundException $e) {
                 $country = 'Unknown';
+                $city = 'Unknown';
             }
         }
 
@@ -42,6 +45,7 @@ class IndexController extends Controller
             'host' => $host,
             'user_agent' => $userAgent,
             'country' => $country,
+            'city' => $city,
         ]);
     }
 
