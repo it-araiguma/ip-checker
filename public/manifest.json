@@ -1,7 +1,7 @@
 {
-    "name": "IPチェッカー | IPアドレス、ホスト、ユーザーエージェントのチェックツール",
-    "short_name": "IPチェッカー",
-    "description": "IPチェッカーは気軽にIPアドレス、ホスト、ユーザーエージェントをチェックできる便利ツールです。",
+    "name": "IPアドレスチェッカー | IPアドレス、ホスト、ユーザーエージェントのチェックツール",
+    "short_name": "IPアドレスチェッカー",
+    "description": "IPアドレスチェッカーは気軽にIPアドレス、ホスト、ユーザーエージェントをチェックできる便利ツールです。",
     "start_url": "https://ip.it-araiguma.com/",
     "display": "standalone",
     "lang": "ja_JP",

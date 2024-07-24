@@ -6,7 +6,7 @@
         <q-toolbar>
             <q-toolbar-title>
                 <a href="/" style="color: #fff;text-decoration: none;">
-                    IPチェッカー
+                    IPアドレスチェッカー
                 </a>
             </q-toolbar-title>
         </q-toolbar>
