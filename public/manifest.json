@@ -14,19 +14,19 @@
             "src": "https://ip.it-araiguma.com/images/32.png",
             "type": "image/png",
             "sizes": "32x32",
-            "purpose": "any maskable"
+            "purpose": "maskable"
         },
         {
+            "purpose": "any maskable",
             "src": "https://ip.it-araiguma.com/images/192.png",
             "type": "image/png",
-            "sizes": "192x192",
-            "purpose": "any maskable"
+            "sizes": "192x192"
         },
         {
             "src": "https://ip.it-araiguma.com/images/512.png",
             "type": "image/png",
             "sizes": "512x512",
-            "purpose": "any maskable"
+            "purpose": "maskable"
         }
     ]
 }
