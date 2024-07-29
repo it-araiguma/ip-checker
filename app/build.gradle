@@ -56,8 +56,8 @@ android {
         applicationId "com.it_araiguma.ip.twa"
         minSdkVersion 19
         targetSdkVersion 34
-        versionCode 8
-        versionName "8"
+        versionCode 9
+        versionName "9"
 
         // The name for the application
         resValue "string", "appName", twaManifest.name

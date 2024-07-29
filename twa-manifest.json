@@ -20,8 +20,8 @@
     "path": "/home/aulani/develop/ip-checker/android.keystore",
     "alias": "android"
   },
-  "appVersionName": "8",
-  "appVersionCode": 8,
+  "appVersionName": "9",
+  "appVersionCode": 9,
   "shortcuts": [],
   "generatorApp": "bubblewrap-cli",
   "webManifestUrl": "https://ip.it-araiguma.com/manifest.json",
@@ -39,5 +39,5 @@
   "fingerprints": [],
   "additionalTrustedOrigins": [],
   "retainedBundles": [],
-  "appVersion": "8"
+  "appVersion": "9"
 }
