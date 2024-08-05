@@ -46,7 +46,7 @@ class IndexController extends Controller
             'user_agent' => $userAgent,
             'country' => $country,
             'city' => $city,
-            'is_twa' => $this->isTWA($userAgent),
+            'is_twa' => $this->isTWA($request),
         ]);
     }
 
@@ -55,10 +55,16 @@ class IndexController extends Controller
         return Inertia::render('Privacy');
     }
 
-    private function isTWA(string $userAgent)
+    private function isTWA(Request $request)
     {
+        $userAgent = $request->header('User-Agent');
+        $xRequestedWith = $request->header('X-Requested-With');
+        $referer = $request->header('Referer');
+
         return strpos($userAgent, 'Android') !== false
             && strpos($userAgent, 'Chrome/') !== false
-            && strpos($userAgent, 'Version/') === false;
+            && strpos($userAgent, 'Version/') === false
+            && $xRequestedWith === 'com.google.android.twa.launcher'
+            && strpos($referer, 'android-app://') === 0;
     }
 }
