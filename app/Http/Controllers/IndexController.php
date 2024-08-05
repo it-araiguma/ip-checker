@@ -46,11 +46,19 @@ class IndexController extends Controller
             'user_agent' => $userAgent,
             'country' => $country,
             'city' => $city,
+            'is_twa' => $this->isTWA($userAgent),
         ]);
     }
 
     public function privacy()
     {
         return Inertia::render('Privacy');
+    }
+
+    private function isTWA(string $userAgent)
+    {
+        return strpos($userAgent, 'Android') !== false
+            && strpos($userAgent, 'Chrome/') !== false
+            && strpos($userAgent, 'Version/') === false;
     }
 }

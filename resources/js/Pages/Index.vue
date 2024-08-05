@@ -11,6 +11,7 @@ const props = defineProps<{
     user_agent: string,
     country: string,
     city: string,
+    is_twa: boolean,
 }>();
 
 const dense = ref(false);
@@ -98,7 +99,7 @@ onUnmounted(() => {
                         <q-btn icon="refresh" color="blue" fab @click="reload" class="float-right q-mt-lg" />
                     </div>
                 </div>
-                <div id="ad-container">
+                <div id="ad-container" v-if="is_twa">
                     <ins class="adsbygoogle" style="display:block" data-ad-client="pub-9551028273212184"
                         data-ad-slot="ca-app-pub-9551028273212184/7613538463" data-ad-format="auto"
                         data-full-width-responsive="true"></ins>
