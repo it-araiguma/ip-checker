@@ -12,8 +12,8 @@ class IndexController extends Controller
     public function index(Request $request)
     {
         $ips = $request->getClientIps();
-        $ipv4 = null;
-        $ipv6 = null;
+        $ipv4 = '';
+        $ipv6 = '';
 
         foreach ($ips as $ip) {
             if (filter_var($ip, FILTER_VALIDATE_IP, FILTER_FLAG_IPV4)) {
@@ -57,14 +57,33 @@ class IndexController extends Controller
 
     private function isTWA(Request $request)
     {
-        $userAgent = $request->header('User-Agent');
-        $xRequestedWith = $request->header('X-Requested-With');
-        $referer = $request->header('Referer');
+        // クライアントサイドで設定したカスタムヘッダーをチェック
+        $isTwaHeader = $request->header('X-Is-TWA');
+        if ($isTwaHeader === 'true') {
+            return true;
+        }
 
-        return strpos($userAgent, 'Android') !== false
+        // User-Agentの確認
+        $userAgent = $request->header('User-Agent');
+        $isAndroidChrome = strpos($userAgent, 'Android') !== false
             && strpos($userAgent, 'Chrome/') !== false
-            && strpos($userAgent, 'Version/') === false
-            && $xRequestedWith === 'com.google.android.twa.launcher'
-            && strpos($referer, 'android-app://') === 0;
+            && strpos($userAgent, 'Version/') === false;
+
+        if (!$isAndroidChrome) {
+            return false;
+        }
+
+        // Referrerの確認
+        $referer = $request->header('Referer');
+        $hasAndroidAppReferer = strpos($referer, 'android-app://') === 0;
+
+        // X-Requested-Withの確認
+        $xRequestedWith = $request->header('X-Requested-With');
+        $hasTwaLauncher = $xRequestedWith === 'com.google.android.twa.launcher';
+
+        // カスタムクエリパラメータの確認
+        $twaParam = $request->query('twa');
+
+        return $hasAndroidAppReferer || $hasTwaLauncher || $twaParam === 'true';
     }
 }

@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { ref, computed, onMounted, onUnmounted } from "vue";
+import { ref, computed, onMounted, onUnmounted, nextTick } from "vue";
 import { router } from "@inertiajs/vue3";
 import Header from "@/Components/Header.vue";
 import Footer from "@/Components/Footer.vue";
@@ -30,38 +30,58 @@ const adContainer = ref(null)
 // Admob SDKをロードする関数
 const loadAdmobSDK = () => {
     return new Promise((resolve) => {
-        const script = document.createElement('script')
-        script.src = `https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=pub-9551028273212184`
-        script.async = true
-        script.onload = resolve
-        document.head.appendChild(script)
+        const script = document.createElement('script');
+        script.src = "https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js";
+        script.async = true;
+        script.onload = resolve;
+        document.head.appendChild(script);
     })
 }
 
 // 広告を表示する関数
 const displayAd = () => {
-    if (adContainer.value && window.adsbygoogle) {
-        const adInsElement = document.createElement('ins')
-        adInsElement.className = 'adsbygoogle'
-        adInsElement.style.display = 'block'
-        adInsElement.setAttribute('data-ad-client', 'pub-9551028273212184')
-        adInsElement.setAttribute('data-ad-slot', 'ca-app-pub-3940256099942544/9214589741')
-        adInsElement.setAttribute('data-ad-format', 'auto')
-        adInsElement.setAttribute('data-full-width-responsive', 'true')
+    if (adContainer.value) {
+        const rect = adContainer.value.getBoundingClientRect();
+        console.log('Ad container size:', rect.width, rect.height);
 
-        adContainer.value.appendChild(adInsElement)
-            ; (window.adsbygoogle = window.adsbygoogle || []).push({})
+        if (rect.width > 0) {
+            const adElement = document.createElement('ins');
+            adElement.className = 'adsbygoogle';
+            adElement.style.display = 'block';
+            adElement.dataset.adClient = 'ca-app-pub-9551028273212184';
+            adElement.dataset.adSlot = '7613538463';
+            adElement.dataset.adFormat = 'auto';
+            adElement.dataset.fullWidthResponsive = 'true';
+
+            adContainer.value.innerHTML = '';  // Clear existing content
+            adContainer.value.appendChild(adElement);
+
+            try {
+                (adsbygoogle = window.adsbygoogle || []).push({});
+            } catch (error) {
+                console.error('Error initializing ad:', error);
+            }
+        } else {
+            console.error('Ad container has no width');
+        }
     }
 }
 
-// コンポーネントがマウントされたときの処理
 onMounted(async () => {
-    await loadAdmobSDK()
-    displayAd()
+    if (props.is_twa) {
+        await loadAdmobSDK()
+        nextTick(() => {
+            displayAd()
+        })
+
+        // ウィンドウのリサイズイベントをリッスン
+        window.addEventListener('resize', displayAd)
+    }
 })
 
-// コンポーネントがアンマウントされたときのクリーンアップ
+// コンポーネントのアンマウント時にイベントリスナーを削除
 onUnmounted(() => {
+    window.removeEventListener('resize', displayAd)
     if (adContainer.value) {
         adContainer.value.innerHTML = ''
     }
@@ -99,13 +119,8 @@ onUnmounted(() => {
                         <q-btn icon="refresh" color="blue" fab @click="reload" class="float-right q-mt-lg" />
                     </div>
                 </div>
-                <div id="ad-container" v-if="is_twa">
-                    <ins class="adsbygoogle" style="display:block" data-ad-client="pub-9551028273212184"
-                        data-ad-slot="ca-app-pub-9551028273212184/7613538463" data-ad-format="auto"
-                        data-full-width-responsive="true"></ins>
-                </div>
-                <div ref="adContainer" class="ad-container"></div>
             </div>
+            <div ref="adContainer" class="ad-container" v-if="props.is_twa"></div>
         </q-page-container>
         <Footer />
     </q-layout>
@@ -117,10 +132,9 @@ onUnmounted(() => {
 }
 
 .ad-container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
     width: 100%;
+    min-height: 100px;
+    background-color: #f0f0f0;
 }
 
 .ad-container ins.adsbygoogle {
