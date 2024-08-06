@@ -68,23 +68,23 @@ const displayAd = () => {
 }
 
 onMounted(async () => {
-    if (props.is_twa) {
-        await loadAdmobSDK()
-        nextTick(() => {
-            displayAd()
-        })
+    // if (props.is_twa) {
+    //     await loadAdmobSDK()
+    //     nextTick(() => {
+    //         displayAd()
+    //     })
 
-        // ウィンドウのリサイズイベントをリッスン
-        window.addEventListener('resize', displayAd)
-    }
+    //     // ウィンドウのリサイズイベントをリッスン
+    //     window.addEventListener('resize', displayAd)
+    // }
 })
 
 // コンポーネントのアンマウント時にイベントリスナーを削除
 onUnmounted(() => {
-    window.removeEventListener('resize', displayAd)
-    if (adContainer.value) {
-        adContainer.value.innerHTML = ''
-    }
+    // window.removeEventListener('resize', displayAd)
+    // if (adContainer.value) {
+    //     adContainer.value.innerHTML = ''
+    // }
 })
 </script>
 
