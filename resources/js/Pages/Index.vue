@@ -120,7 +120,7 @@ onUnmounted(() => {
                     </div>
                 </div>
             </div>
-            <div ref="adContainer" class="ad-container" v-if="props.is_twa"></div>
+            <!-- <div ref="adContainer" class="ad-container" v-if="props.is_twa"></div> -->
         </q-page-container>
         <Footer />
     </q-layout>
