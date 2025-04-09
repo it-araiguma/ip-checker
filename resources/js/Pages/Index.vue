@@ -113,13 +113,17 @@ const copyToClipboard = (text: string) => {
 
                             <q-card flat bordered class="q-mb-sm">
                                 <q-card-section>
-                                    <div class="text-subtitle2 text-grey">ユーザーエージェント</div>
-                                    <div class="text-body1 break-all">{{ props.user_agent }}</div>
+                                    <div class="row items-center no-wrap">
+                                        <div class="col">
+                                            <div class="text-subtitle2 text-grey">ユーザーエージェント</div>
+                                            <div class="text-body1 break-all">{{ props.user_agent }}</div>
+                                        </div>
+                                        <div class="col-auto">
+                                            <q-btn flat round color="primary" icon="content_copy"
+                                                @click="copyToClipboard(props.user_agent)" />
+                                        </div>
+                                    </div>
                                 </q-card-section>
-                                <q-card-actions align="right">
-                                    <q-btn flat color="primary" icon="content_copy" label="コピー"
-                                        @click="copyToClipboard(props.user_agent)" />
-                                </q-card-actions>
                             </q-card>
                         </div>
                     </q-card-section>
