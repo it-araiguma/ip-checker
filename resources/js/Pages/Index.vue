@@ -127,11 +127,13 @@ const copyToClipboard = (text: string) => {
           <q-card-actions align="right">
             <q-btn
               color="primary"
-              icon="refresh"
-              label="更新"
               @click="reload"
               :loading="loading"
-            />
+              class="q-px-md"
+            >
+              <q-icon name="refresh" class="q-mr-xs" />
+              <span>更新</span>
+            </q-btn>
           </q-card-actions>
         </q-card>
 
