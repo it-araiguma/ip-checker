@@ -46,77 +46,77 @@ const copyToClipboard = (text: string) => {
 </script>
 
 <template>
-  <q-layout view="lHh Lpr lFf">
+  <q-layout view="lHh Lpr lFf" :class="{'bg-dark': $q.dark.isActive, 'bg-grey-1': !$q.dark.isActive}">
     <Header/>
-    <q-page-container class="flex justify-center items-start bg-grey-1">
+    <q-page-container class="flex justify-center items-start" :class="{'bg-grey-9': $q.dark.isActive, 'bg-grey-1': !$q.dark.isActive}">
       <div class="q-pa-md q-my-md" style="width: 800px; max-width: 95%;">
-        <q-card class="q-pa-md shadow-5">
+        <q-card class="q-pa-md shadow-5" :class="{'bg-dark': $q.dark.isActive, 'bg-white': !$q.dark.isActive}">
           <q-card-section>
-            <div class="text-h6 text-primary q-mb-md">あなたのネットワーク情報</div>
-
+            <div class="text-h6 q-mb-md" :class="{'text-blue-4': $q.dark.isActive, 'text-blue-9': !$q.dark.isActive}">あなたのネットワーク情報</div>
+            
             <div class="q-gutter-y-md">
-              <q-card flat bordered v-if="props.ipv4" class="q-mb-sm">
+              <q-card flat bordered v-if="props.ipv4" class="q-mb-sm" :class="{'bg-grey-8 q-card--bordered': $q.dark.isActive, 'bg-grey-1': !$q.dark.isActive}">
                 <q-card-section>
                   <div class="row items-center no-wrap">
                     <div class="col">
-                      <div class="text-subtitle2 text-grey">IPアドレス (v4)</div>
-                      <div class="text-body1">{{ props.ipv4 }}</div>
+                      <div class="text-subtitle2" :class="{'text-blue-2': $q.dark.isActive, 'text-blue-9': !$q.dark.isActive}">IPアドレス (v4)</div>
+                      <div class="text-body1" :class="{'text-white': $q.dark.isActive}">{{ props.ipv4 }}</div>
                     </div>
                     <div class="col-auto">
-                      <q-btn flat round color="primary" icon="content_copy" @click="copyToClipboard(props.ipv4)" />
+                      <q-btn flat round :color="$q.dark.isActive ? 'blue-4' : 'blue-9'" icon="content_copy" @click="copyToClipboard(props.ipv4)" />
                     </div>
                   </div>
                 </q-card-section>
               </q-card>
 
-              <q-card flat bordered v-if="props.ipv6" class="q-mb-sm">
+              <q-card flat bordered v-if="props.ipv6" class="q-mb-sm" :class="{'bg-grey-8 q-card--bordered': $q.dark.isActive, 'bg-grey-1': !$q.dark.isActive}">
                 <q-card-section>
                   <div class="row items-center no-wrap">
                     <div class="col">
-                      <div class="text-subtitle2 text-grey">IPアドレス (v6)</div>
-                      <div class="text-body1 break-all">{{ props.ipv6 }}</div>
+                      <div class="text-subtitle2" :class="{'text-blue-2': $q.dark.isActive, 'text-blue-9': !$q.dark.isActive}">IPアドレス (v6)</div>
+                      <div class="text-body1 break-all" :class="{'text-white': $q.dark.isActive}">{{ props.ipv6 }}</div>
                     </div>
                     <div class="col-auto">
-                      <q-btn flat round color="primary" icon="content_copy" @click="copyToClipboard(props.ipv6)" />
+                      <q-btn flat round :color="$q.dark.isActive ? 'blue-4' : 'blue-9'" icon="content_copy" @click="copyToClipboard(props.ipv6)" />
                     </div>
                   </div>
                 </q-card-section>
               </q-card>
 
-              <q-card flat bordered class="q-mb-sm">
+              <q-card flat bordered class="q-mb-sm" :class="{'bg-grey-8 q-card--bordered': $q.dark.isActive, 'bg-grey-1': !$q.dark.isActive}">
                 <q-card-section>
                   <div class="row items-center no-wrap">
                     <div class="col">
-                      <div class="text-subtitle2 text-grey">国 / 都市</div>
-                      <div class="text-body1">{{ CountryAndCity }}</div>
+                      <div class="text-subtitle2" :class="{'text-blue-2': $q.dark.isActive, 'text-blue-9': !$q.dark.isActive}">国 / 都市</div>
+                      <div class="text-body1" :class="{'text-white': $q.dark.isActive}">{{ CountryAndCity }}</div>
                     </div>
                   </div>
                 </q-card-section>
               </q-card>
 
-              <q-card flat bordered class="q-mb-sm">
+              <q-card flat bordered class="q-mb-sm" :class="{'bg-grey-8 q-card--bordered': $q.dark.isActive, 'bg-grey-1': !$q.dark.isActive}">
                 <q-card-section>
                   <div class="row items-center no-wrap">
                     <div class="col">
-                      <div class="text-subtitle2 text-grey">ホスト</div>
-                      <div class="text-body1 break-all">{{ props.host }}</div>
+                      <div class="text-subtitle2" :class="{'text-blue-2': $q.dark.isActive, 'text-blue-9': !$q.dark.isActive}">ホスト</div>
+                      <div class="text-body1 break-all" :class="{'text-white': $q.dark.isActive}">{{ props.host }}</div>
                     </div>
                     <div class="col-auto">
-                      <q-btn flat round color="primary" icon="content_copy" @click="copyToClipboard(props.host)" />
+                      <q-btn flat round :color="$q.dark.isActive ? 'blue-4' : 'blue-9'" icon="content_copy" @click="copyToClipboard(props.host)" />
                     </div>
                   </div>
                 </q-card-section>
               </q-card>
 
-              <q-card flat bordered class="q-mb-sm">
+              <q-card flat bordered class="q-mb-sm" :class="{'bg-grey-8 q-card--bordered': $q.dark.isActive, 'bg-grey-1': !$q.dark.isActive}">
                 <q-card-section>
                   <div class="row items-center no-wrap">
                     <div class="col">
-                      <div class="text-subtitle2 text-grey">ユーザーエージェント</div>
-                      <div class="text-body1 break-all">{{ props.user_agent }}</div>
+                      <div class="text-subtitle2" :class="{'text-blue-2': $q.dark.isActive, 'text-blue-9': !$q.dark.isActive}">ユーザーエージェント</div>
+                      <div class="text-body1 break-all" :class="{'text-white': $q.dark.isActive}">{{ props.user_agent }}</div>
                     </div>
                     <div class="col-auto">
-                      <q-btn flat round color="primary" icon="content_copy" @click="copyToClipboard(props.user_agent)" />
+                      <q-btn flat round :color="$q.dark.isActive ? 'blue-4' : 'blue-9'" icon="content_copy" @click="copyToClipboard(props.user_agent)" />
                     </div>
                   </div>
                 </q-card-section>
@@ -126,7 +126,7 @@ const copyToClipboard = (text: string) => {
 
           <q-card-actions align="right">
             <q-btn
-              color="primary"
+              :color="$q.dark.isActive ? 'blue-4' : 'blue-9'"
               @click="reload"
               :loading="loading"
               class="q-px-md"
@@ -154,5 +154,9 @@ const copyToClipboard = (text: string) => {
 <style>
 .break-all {
   word-break: break-all;
+}
+
+.q-card--bordered {
+  border: 1px solid rgba(100, 150, 255, 0.2);
 }
 </style>

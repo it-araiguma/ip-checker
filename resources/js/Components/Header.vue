@@ -9,7 +9,7 @@ const toggleDarkMode = () => {
 </script>
 
 <template>
-    <q-header elevated class="bg-primary text-white">
+    <q-header elevated :class="{'bg-blue-9': $q.dark.isActive, 'bg-blue-7': !$q.dark.isActive}" class="text-white">
         <q-toolbar>
             <q-toolbar-title class="row items-center">
                 <q-icon name="public" size="md" class="q-mr-sm" />
@@ -18,11 +18,11 @@ const toggleDarkMode = () => {
                 </a>
             </q-toolbar-title>
             
-            <q-btn flat round icon="brightness_medium" @click="toggleDarkMode">
+            <q-btn flat round icon="brightness_medium" @click="toggleDarkMode" class="text-blue-1">
                 <q-tooltip>ダークモード切替</q-tooltip>
             </q-btn>
             
-            <q-btn flat round icon="help_outline" href="/privacy">
+            <q-btn flat round icon="help_outline" href="/privacy" class="text-blue-1">
                 <q-tooltip>プライバシーポリシー</q-tooltip>
             </q-btn>
         </q-toolbar>
@@ -31,6 +31,6 @@ const toggleDarkMode = () => {
 
 <style>
 .q-header {
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
 }
 </style>
