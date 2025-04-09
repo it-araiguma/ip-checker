@@ -3,15 +3,21 @@ import { Link } from "@inertiajs/inertia-vue3";
 </script>
 
 <template>
-    <q-footer elevated class="bg-grey-8 text-white q-pt-sm q-pb-sm">
+    <q-footer elevated class="bg-primary text-white">
         <q-toolbar>
             <q-toolbar-title>
-                <div class="copyright text-center q-mb-xs">
-                    <Link :href="route('index')" class="q-mx-xs">ホーム</Link>
-                    <Link :href="route('privacy')" class="q-mx-xs">プライバシーポリシー</Link>
+                <div class="row justify-center q-mb-sm">
+                    <q-btn flat dense size="sm" :to="route('index')" icon="home" label="ホーム" class="q-mx-xs" />
+                    <q-btn flat dense size="sm" :to="route('privacy')" icon="policy" label="プライバシーポリシー" class="q-mx-xs" />
                 </div>
                 <div class="copyright text-center">
-                    Copyright © <a href="https://it-araiguma.com" target="_blank">ITアライグマ</a> AllRights Reserved.
+                    <div class="row justify-center items-center">
+                        <span>Copyright {{ new Date().getFullYear() }} </span>
+                        <a href="https://it-araiguma.com" target="_blank" class="q-px-xs text-white">
+                            ITアライグマ
+                        </a>
+                        <span> All Rights Reserved.</span>
+                    </div>
                 </div>
             </q-toolbar-title>
         </q-toolbar>
@@ -23,7 +29,7 @@ import { Link } from "@inertiajs/inertia-vue3";
     font-size: 14px;
 }
 
-.copyright>a {
-    color: #fff;
+.q-footer {
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
 }
 </style>
