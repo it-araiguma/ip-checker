@@ -80,9 +80,7 @@ import Footer from "@/Components/Footer.vue";
                         <div class="text-h5">7. お問い合わせ先</div>
                         <div>
                             本ポリシーに関するお問い合わせは、以下の連絡先までご連絡ください。<br>
-
-                            ITアライグマ<br>
-                            メールアドレス：itaraigumaあっとジーメールドットコム(ご連絡時は書き換えてください)
+                            <a href="https://it-araiguma.com/contact" target="_blank">ITアライグマ</a>
                         </div>
                     </div>
                 </div>
