@@ -11,10 +11,13 @@ import '@quasar/extras/material-icons/material-icons.css'
 // Import Quasar css
 import 'quasar/src/css/index.sass'
 
-// Enable dark mode by default if user prefers it
-if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
-    Dark.set(true);
-}
+// デフォルトではダークモードを無効にする
+Dark.set(false);
+
+// ユーザーがダークモードを好む場合のみ有効にする（コメントアウト）
+// if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+//     Dark.set(true);
+// }
 
 createInertiaApp({
     resolve: (name) =>
@@ -32,7 +35,7 @@ createInertiaApp({
                 },
                 lang: quasarLang,
                 config: {
-                    dark: 'auto' // 'auto' | true | false
+                    dark: false // 'auto' | true | false
                 }
             })
             .mixin({ methods: { route } })
