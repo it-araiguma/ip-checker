@@ -36,11 +36,6 @@
     @routes
     @inertiaHead
     @vite(['resources/css/app.css', 'resources/js/app.js'])
-    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9551028273212184"
-            crossorigin="anonymous"></script>
-    <script>
-        (adsbygoogle = window.adsbygoogle || []).push({});
-    </script>
 </head>
 
 <body>
