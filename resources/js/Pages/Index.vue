@@ -126,10 +126,11 @@ const copyToClipboard = (text: string) => {
 
           <q-card-actions align="right">
             <q-btn
-              :color="$q.dark.isActive ? 'blue-4' : 'blue-9'"
+              :color="$q.dark.isActive ? 'blue-8' : 'blue-9'"
               @click="reload"
               :loading="loading"
               class="q-px-md"
+              text-color="white"
             >
               <q-icon name="refresh" class="q-mr-xs" />
               <span>更新</span>
