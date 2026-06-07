@@ -1,5 +1,5 @@
 <script lang="ts" setup>
-import { Link } from "@inertiajs/inertia-vue3";
+import { Link } from "@inertiajs/vue3";
 import { useQuasar } from 'quasar';
 
 const $q = useQuasar();
