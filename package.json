@@ -20,7 +20,7 @@
         "@quasar/extras": "^1.16.9",
         "@types/ziggy-js": "^1.8.0",
         "@vitejs/plugin-vue": "^6.0.0",
-        "quasar": "^2.16.0",
+        "quasar": "^2.23.3",
         "vue": "^3.4.3"
     }
 }
