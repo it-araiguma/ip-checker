@@ -13,14 +13,16 @@
         "vite": "^7.0.0"
     },
     "overrides": {
-        "esbuild": "0.28.1"
+        "esbuild": "0.28.1",
+        "immutable": "5.1.9",
+        "postcss": "8.5.25"
     },
     "dependencies": {
         "@inertiajs/vue3": "^1.0.14",
         "@quasar/extras": "^1.16.9",
         "@types/ziggy-js": "^1.8.0",
         "@vitejs/plugin-vue": "^6.0.0",
-        "quasar": "^2.16.0",
+        "quasar": "^2.23.3",
         "vue": "^3.4.3"
     }
 }
