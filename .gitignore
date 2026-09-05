@@ -25,3 +25,4 @@ app-release-*
 android.keystore
 manifest-checksum.txt
 store_icon.png
+upload_certificate.pem
