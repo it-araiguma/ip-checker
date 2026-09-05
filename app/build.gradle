@@ -57,8 +57,8 @@ android {
         applicationId "com.it_araiguma.ip.twa"
         minSdk 21
         targetSdk 36
-        versionCode 10
-        versionName "10"
+        versionCode 11
+        versionName "11"
 
         // The name for the application
         resValue "string", "appName", twaManifest.name
@@ -146,9 +146,25 @@ android {
         resValue "bool", "enableSiteSettingsShortcut", twaManifest.enableSiteSettingsShortcut
         resValue "string", "orientation", twaManifest.orientation
     }
+    signingConfigs {
+        release {
+            def keystorePath = System.getenv("KEYSTORE_FILE") ?: "$rootDir/android.keystore"
+            def keystoreFile = file(keystorePath)
+            if (keystoreFile.exists()) {
+                storeFile keystoreFile
+                storePassword System.getenv("KEYSTORE_PASSWORD") ?: ""
+                keyAlias System.getenv("KEY_ALIAS") ?: (twaManifest.signingKey?.alias ?: "android")
+                keyPassword System.getenv("KEY_PASSWORD") ?: System.getenv("KEYSTORE_PASSWORD") ?: ""
+            }
+        }
+    }
     buildTypes {
         release {
             minifyEnabled true
+            def keystorePath = System.getenv("KEYSTORE_FILE") ?: "$rootDir/android.keystore"
+            if (file(keystorePath).exists()) {
+                signingConfig signingConfigs.release
+            }
         }
     }
     compileOptions {
