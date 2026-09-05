@@ -51,11 +51,12 @@ def twaManifest = [
 ]
 
 android {
-    compileSdkVersion 34
+    namespace 'com.it_araiguma.ip.twa'
+    compileSdk 36
     defaultConfig {
         applicationId "com.it_araiguma.ip.twa"
-        minSdkVersion 19
-        targetSdkVersion 34
+        minSdk 21
+        targetSdk 36
         versionCode 10
         versionName "10"
 
@@ -151,10 +152,10 @@ android {
         }
     }
     compileOptions {
-        sourceCompatibility JavaVersion.VERSION_1_8
-        targetCompatibility JavaVersion.VERSION_1_8
+        sourceCompatibility JavaVersion.VERSION_17
+        targetCompatibility JavaVersion.VERSION_17
     }
-    lintOptions {
+    lint {
         checkReleaseBuilds false
     }
 }
